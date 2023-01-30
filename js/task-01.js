@@ -18,18 +18,23 @@ console.log(counterListEl(catigoriesElChildren))
 
 // 2. Для каждого элемента li.item в списке ul#categories, найдет и выведет в консоль текст заголовка элемента (тега <h2>) и количество элементов в категории (всех вложенных в него <li>).
 
-const printTitleAndCountLiItems = (array) => {
+// const printTitleAndCountLiItems = (array) => {
 
-    const iterrateOverCategories = [...array].map(element => {
+//     const iterrateOverCategories = [...array].forEach(element => {
        
-        const listArray = element.querySelectorAll('li');
+//         const listArray = element.querySelectorAll('li');
 
-    return {
-        category: element.firstElementChild.textContent,
-        elements: listArray.length,
-        }})
-    return iterrateOverCategories;
-}
+//    console.log({
+//         category: element.firstElementChild.textContent,
+//         elements: listArray.length,
+//         }) })
+    
+// }
 
-console.log(printTitleAndCountLiItems(catigoriesElChildren));
+// console.log(printTitleAndCountLiItems(catigoriesElChildren));
 
+
+catigoriesElChildren.forEach(el => {
+    console.log(`Category:${el.firstElementChild.textContent},
+    Elements: ${el.lastElementChild.children.length}`)
+});
